@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxml.controller.UpdateController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label style="-fx-text-fill: #c0c0c0;" text="username" textFill="SILVER">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Narrow" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="usernamefield" styleClass="textfield" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label style="-fx-text-fill: #c0c0c0;" text="password" textFill="SILVER">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Narrow" size="24.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="pwfield" styleClass="textfield" />
+               </children>
+            </HBox>
+            <StackPane>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="30.0">
+                     <children>
+                        <Text fx:id="mes" fill="#971d1d" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </children>
+                  </HBox>
+                  <ProgressBar fx:id="bar" prefWidth="200.0" />
+               </children>
+            </StackPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button fx:id="handleUpdate" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="40.0" prefWidth="70.0" styleClass="lbutton" text="修改">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox fx:id="Top" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="66.0" prefWidth="174.0" styleClass="headerLabel" stylesheets="@stylesheet.css" text="Restore" textFill="SILVER" BorderPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Arial Narrow" size="33.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="20.0" />
+               </BorderPane.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

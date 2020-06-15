@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="930.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxml.controller.secondPageController.PeerController">
+   <children>
+      <HBox alignment="CENTER" layoutX="460.0" layoutY="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <BorderPane prefWidth="1000.0" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="460.0" AnchorPane.topAnchor="20.0">
+               <center>
+                  <VBox>
+                     <children>
+                        <HBox fx:id="Top" alignment="CENTER_LEFT" prefHeight="40.0">
+                           <children>
+                              <Label fx:id="TopLabel" lineSpacing="10.0" text="通道节点集合" textFill="#a17a7a">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="peerInfo" editable="true" prefHeight="300.0" prefWidth="1000.0" stylesheets="@../../css/tableview.css" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="name" prefWidth="198.0" text="name" />
+                              <TableColumn fx:id="eventhubLocation" prefWidth="273.0" text="eventhubLocation" />
+                              <TableColumn fx:id="eventhubName" prefWidth="232.0" text="eventhubName" />
+                              <TableColumn fx:id="location" prefWidth="296.0" text="location" />
+                           </columns>
+                        </TableView>
+                        <StackPane prefHeight="30.0">
+                           <children>
+                              <Button fx:id="lastPage" mnemonicParsing="false" text="上一页" StackPane.alignment="TOP_LEFT">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <StackPane.margin>
+                                    <Insets left="20.0" />
+                                 </StackPane.margin>
+                              </Button>
+                              <Button fx:id="nextPage" mnemonicParsing="false" text="下一页" StackPane.alignment="TOP_RIGHT">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <StackPane.margin>
+                                    <Insets right="20.0" />
+                                 </StackPane.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </StackPane>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+               <top>
+                  <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="mes" alignment="CENTER" prefHeight="35.0" prefWidth="600.0" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

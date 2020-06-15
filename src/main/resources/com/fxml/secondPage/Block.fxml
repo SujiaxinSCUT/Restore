@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="930.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxml.controller.secondPageController.BlockController">
+   <children>
+      <HBox alignment="CENTER" layoutX="460.0" layoutY="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <BorderPane prefWidth="1000.0" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="460.0" AnchorPane.topAnchor="20.0">
+               <center>
+                  <VBox>
+                     <children>
+                        <HBox fx:id="Top" alignment="CENTER_LEFT" prefHeight="40.0">
+                           <children>
+                              <Label fx:id="TopLabel" lineSpacing="10.0" text="通道区块集合" textFill="#a17a7a">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="blockInfo" editable="true" prefHeight="300.0" prefWidth="1000.0" stylesheets="@../../css/tableview.css" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="blockNumber" prefWidth="70.0" text="区块高度" />
+                              <TableColumn fx:id="blockHash" prefWidth="200.0" text="当前区块Hash" />
+                              <TableColumn fx:id="previousHash" minWidth="0.0" prefWidth="200.0" text="上一区块Hash" />
+                              <TableColumn fx:id="txCount" prefWidth="70.0" text="交易数量" />
+                              <TableColumn fx:id="dataHash" prefWidth="200.0" text="数据Hash" />
+                              <TableColumn fx:id="channelId" minWidth="0.0" prefWidth="259.0" text="通道名称" />
+                           </columns>
+                        </TableView>
+                        <StackPane prefHeight="30.0">
+                           <children>
+                              <Button fx:id="lastPage" mnemonicParsing="false" text="上一页" StackPane.alignment="TOP_LEFT">
+                                 <StackPane.margin>
+                                    <Insets left="20.0" />
+                                 </StackPane.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="nextPage" mnemonicParsing="false" text="下一页" StackPane.alignment="TOP_RIGHT">
+                                 <StackPane.margin>
+                                    <Insets right="20.0" />
+                                 </StackPane.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </StackPane>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="20.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+               <top>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="mes" alignment="CENTER" prefHeight="35.0" prefWidth="600.0" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

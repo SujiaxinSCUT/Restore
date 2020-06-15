@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane prefHeight="1600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxml.controller.HomePageController">
+   <content>
+      <AnchorPane prefHeight="1600.0" prefWidth="1280.0" style="-fx-background-color: #F3F3FA;">
+         <children>
+            <HBox alignment="CENTER" prefWidth="1000.0">
+               <children>
+                  <Label fx:id="mes" prefHeight="40.0" prefWidth="800.0" text="获取数据出错" visible="false" />
+               </children>
+            </HBox>
+            <HBox fx:id="hb" alignment="CENTER" AnchorPane.topAnchor="40.0">
+               <children>
+                  <FlowPane fx:id="container" alignment="CENTER_LEFT" columnHalignment="CENTER" rowValignment="TOP" vgap="30.0">
+                     <children>
+                        <JFXMasonryPane fx:id="mas1" HSpacing="37.0" VSpacing="20.0" cellHeight="60.0" limitRow="300" prefHeight="300.0" prefWidth="1280.0">
+                           <children>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CA">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/CA.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="userCount" fill="#4f4f4f" layoutX="110.0" layoutY="100.0" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="本地部署CA用户" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="交易">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/RAW.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="tranCount" fill="#daab29" layoutX="110.0" layoutY="100.0" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="总交易数量" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="联盟">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/League.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="leagueCount" fill="#4dbbd3" layoutX="110.0" layoutY="100.0" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="以联盟链为最大单位" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="组织">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/org.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="orgCount" fill="#7d3fda" layoutX="110.0" layoutY="100.0" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="公司、团体、机构等" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="链码">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/chaincode.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="chaincodeCount" fill="#43b245" layoutX="110.0" layoutY="100.0" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="通道所属链码" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="通道">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/channel.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="channelCount" fill="#4581ae" layoutX="110.0" layoutY="100.0" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="节点所属通道" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="5.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="节点">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../logo/peer.png" />
+                                             </image></ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="peerCount" fill="#ab2020" stroke="#c94040" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="54.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text fill="#9d9d9d" strokeType="OUTSIDE" strokeWidth="0.0" text="本地部署节点" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </JFXMasonryPane>
+                        <JFXMasonryPane fx:id="mas2" HSpacing="37.0" VSpacing="20.0" cellHeight="55.0" prefWidth="1280.0">
+                           <children>
+                              <VBox fillWidth="false" prefWidth="600.0" style="-fx-border-color: #d0d0d0; -fx-background-color: white;">
+                                 <children>
+                                    <Label fx:id="CBRLabel" prefHeight="53.0" prefWidth="603.0" style="-fx-text-fill: #000000; -fx-border-color: #d0d0d0;" text="通道区块记录">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <LineChart fx:id="LChartBlockOfChannel" alternativeColumnFillVisible="true" prefHeight="200.0" prefWidth="605.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <TableView fx:id="blockInfo" editable="true" layoutX="719.0" layoutY="377.0" prefHeight="250.0" prefWidth="603.0" stylesheets="@../css/tableview.css">
+                                      <columns>
+                                          <TableColumn fx:id="HeightColumn" prefWidth="100.0" text="区块高度" />
+                                        <TableColumn fx:id="TransactionsColumn" prefWidth="105.0" text="交易数量" />
+                                          <TableColumn fx:id="BlockOfChannel" prefWidth="189.0" text="所属通道" />
+                                          <TableColumn fx:id="dateColumn" prefWidth="208.0" text="日期" />
+                                      </columns>
+                                       <cursor>
+                                          <Cursor fx:constant="TEXT" />
+                                       </cursor>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                              <VBox fillWidth="false" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <Label fx:id="CPBLabel" prefHeight="53.0" prefWidth="300.0" style="-fx-border-color: #d0d0d0; -fx-font-weight: normal; -fx-font-size: 20;" text="通道区块比">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <PieChart fx:id="PChartBlocksOfChannel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" />
+                                 </children>
+                              </VBox>
+                              <VBox style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                 <children>
+                                    <Label fx:id="CPTLabel" prefHeight="50.0" prefWidth="290.0" style="-fx-border-color: #d0d0d0; -fx-font-weight: normal; -fx-font-size: 20;" text="通道交易比">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <PieChart fx:id="PChartTXOfChannel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="290.0" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="150.0" prefWidth="300.0" spacing="10.0" style="-fx-background-color: white; -fx-border-color: d0d0d0;">
+                                 <children>
+                                    <Label alignment="CENTER" prefWidth="300.0" text="平台今日区块数">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fx:id="todayBlockNum" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" spacing="10.0" style="-fx-background-color: white; -fx-border-color: d0d0d0;">
+                                 <children>
+                                    <Label alignment="CENTER" prefWidth="300.0" text="平台今日交易量">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fx:id="todayTranNum" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </JFXMasonryPane>
+                        <JFXMasonryPane fx:id="mas3" HSpacing="37.0" prefWidth="1280.0">
+                           <children>
+                              <VBox spacing="20.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="350.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@../../../logo/Trello.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <VBox spacing="3.0">
+                                             <children>
+                                                <Label fx:id="TranNum" text="0">
+                                                   <font>
+                                                      <Font size="28.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="平台总交易量" textFill="#9d9d9d">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="15.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="190.0" prefWidth="350.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                       <children>
+                                          <Label text="交易">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label fx:id="TLLabel" prefHeight="20.0" prefWidth="350.0" text="平台日总交易量曲线" textFill="#7b7b7b">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <LineChart fx:id="LChartOfTran">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="20.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="350.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@../../../logo/Yotu.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <VBox spacing="3.0">
+                                             <children>
+                                                <Label fx:id="BlockNum" text="0">
+                                                   <font>
+                                                      <Font size="28.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="平台区块总数" textFill="#9d9d9d">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="15.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="190.0" prefWidth="350.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                       <children>
+                                          <Label text="区块">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label fx:id="TLLabel1" prefHeight="20.0" prefWidth="350.0" text="平台日总区块曲线" textFill="#7b7b7b">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <LineChart fx:id="LChartOfBlock">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="20.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="350.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@../../../logo/Camera.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <VBox spacing="3.0">
+                                             <children>
+                                                <Label fx:id="RwsetNum" text="0">
+                                                   <font>
+                                                      <Font size="28.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="平台区块读写集总数" textFill="#9d9d9d">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="15.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="190.0" prefWidth="350.0" style="-fx-background-color: white; -fx-border-color: #d0d0d0;">
+                                       <children>
+                                          <Label text="读写集">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label fx:id="TLLabel2" prefHeight="20.0" prefWidth="350.0" text="平台日总读写集曲线" textFill="#7b7b7b">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <LineChart fx:id="LChartOfRwset">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </JFXMasonryPane>
+                        <HBox alignment="CENTER" style="-fx-border-color: #d0d0d0; -fx-background-color: white;">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" layoutY="1000.0" prefWidth="1245.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1000.0">
+                                 <children>
+                                    <Label fx:id="BlockRecord" prefHeight="50.0" prefWidth="1245.0" text="区块记录">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TableView fx:id="blockInfo2" editable="true" prefHeight="200.0" prefWidth="1245.0" stylesheets="@../css/tableview.css">
+                                       <columns>
+                                          <TableColumn fx:id="NumColumn" editable="false" prefWidth="72.0" sortable="false" text="No." />
+                                          <TableColumn fx:id="HeightColumn2" editable="false" prefWidth="115.0" sortable="false" text="区块高度" />
+                                          <TableColumn fx:id="ChanNameColumn" editable="false" prefWidth="190.0" sortable="false" text="通道名称" />
+                                          <TableColumn fx:id="BlockHashColumn" editable="false" prefWidth="427.0" sortable="false" text="当前区块HASH" />
+                                          <TableColumn fx:id="DateColumn" prefWidth="224.0" text="日期" />
+                                          <TableColumn fx:id="SynColumn" prefWidth="216.0" text="区块同步率" />
+                                       </columns>
+                                       <cursor>
+                                          <Cursor fx:constant="TEXT" />
+                                       </cursor>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </FlowPane>
+               </children>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </HBox>
+         </children></AnchorPane>
+   </content>
+</ScrollPane>
